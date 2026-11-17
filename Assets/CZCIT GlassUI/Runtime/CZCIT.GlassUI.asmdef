@@ -1,0 +1,5 @@
+{
+    "name": "CZCIT.GlassUI",
+    "references": ["UnityEngine.UI"],
+    "autoReferenced": true
+}

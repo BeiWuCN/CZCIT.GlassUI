@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="210">
+<rect width="960" height="210" rx="20" fill="#14213a"/>
+<g fill="#eff5ff" font-family="Microsoft YaHei,sans-serif">
+<text x="38" y="54" font-size="30">拖动分页 · 输入交接</text>
+<rect x="38" y="78" width="884" height="68" rx="12" fill="#365583"/>
+<text x="63" y="121" font-size="24">抓住拖拽柄　→　拖动预览　→　松手判断阈值　→　回弹或启用新页</text>
+<text x="38" y="182" font-size="18">预览和过渡期间关闭页面点击</text>
+</g>
+</svg>

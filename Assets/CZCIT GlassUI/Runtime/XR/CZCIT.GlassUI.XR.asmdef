@@ -1,0 +1,5 @@
+{
+    "name": "CZCIT.GlassUI.XR",
+    "references": ["CZCIT.GlassUI", "UnityEngine.UI", "Unity.XR.Interaction.Toolkit"],
+    "autoReferenced": true
+}

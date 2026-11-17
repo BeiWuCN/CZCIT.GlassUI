@@ -1,0 +1,5 @@
+{
+    "name": "CZCIT.GlassUI.Editor",
+    "references": ["CZCIT.GlassUI", "UnityEngine.UI"],
+    "includePlatforms": ["Editor"]
+}

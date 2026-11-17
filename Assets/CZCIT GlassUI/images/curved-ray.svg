@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330">
+<rect width="1000" height="330" rx="22" fill="#101a30"/>
+<g font-family="Microsoft YaHei,sans-serif" fill="#edf4ff"><text x="45" y="56" font-size="30" font-weight="bold">手柄如何点中曲面按钮</text>
+<path d="M380 105 Q510 190 380 275" fill="none" stroke="#78bffc" stroke-width="12"/>
+<path d="M100 260 L438 194" fill="none" stroke="#ffd279" stroke-width="4"/>
+<circle cx="438" cy="194" r="10" fill="#ffd279"/>
+<path d="M468 194 H687" stroke="#9bbdf3" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M677 186 L689 194 L677 202" fill="none" stroke="#9bbdf3" stroke-width="3"/>
+<rect x="706" y="103" width="226" height="155" rx="10" fill="#293f66" stroke="#76bffc"/>
+<rect x="748" y="164" width="142" height="61" rx="8" fill="#486bb0"/>
+<g font-size="21"><text x="66" y="290">手柄射线</text><text x="367" y="92">曲面碰撞点</text><text x="485" y="172">展开为平面坐标</text><text x="751" y="141">Canvas</text><text x="777" y="203">按钮命中</text></g>
+<text x="720" y="296" font-size="17" fill="#a9badb">交互原理示意 · 俯视</text></g></svg>
