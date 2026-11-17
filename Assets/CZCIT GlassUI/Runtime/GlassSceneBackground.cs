@@ -7,7 +7,7 @@ namespace CZCIT.GlassUI
 {
     // Copy the current camera's opaque scene once, without another Camera.Render.
     [ExecuteAlways, RequireComponent(typeof(Camera))]
-    public class MoonGlassBackground : MonoBehaviour
+    public class GlassSceneBackground : MonoBehaviour
     {
         Camera source;
         CommandBuffer commands;
@@ -41,9 +41,9 @@ namespace CZCIT.GlassUI
                 return;
             Release();
             previous = descriptor;
-            background = new RenderTexture(descriptor) { name = "MoonGlassOpaqueScene", filterMode = FilterMode.Bilinear };
+            background = new RenderTexture(descriptor) { name = "GlassUIOpaqueScene", filterMode = FilterMode.Bilinear };
             background.Create();
-            commands = new CommandBuffer { name = "Moon glass background copy" };
+            commands = new CommandBuffer { name = "Glass UI background copy" };
             if (descriptor.dimension == TextureDimension.Tex2DArray)
             {
                 for (int eye = 0; eye < descriptor.volumeDepth; eye++)
@@ -51,18 +51,18 @@ namespace CZCIT.GlassUI
             }
             else
                 commands.Blit(BuiltinRenderTextureType.CameraTarget, background);
-            commands.SetGlobalTexture("_MoonGlassScene", background);
+            commands.SetGlobalTexture("_CZCITGlassScene", background);
             commands.SetGlobalVector(
-                "_MoonGlassScene_TexelSize",
+                "_CZCITGlassScene_TexelSize",
                 new Vector4(1f / descriptor.width, 1f / descriptor.height, descriptor.width, descriptor.height));
-            commands.SetGlobalFloat("_MoonGlassSceneReady", 1);
+            commands.SetGlobalFloat("_CZCITGlassSceneReady", 1);
             source.AddCommandBuffer(CameraEvent.AfterSkybox, commands);
         }
 
         void OnDisable()
         {
             Release();
-            Shader.SetGlobalFloat("_MoonGlassSceneReady", 0);
+            Shader.SetGlobalFloat("_CZCITGlassSceneReady", 0);
         }
 
         void Release()

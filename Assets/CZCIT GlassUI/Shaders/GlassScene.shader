@@ -1,5 +1,5 @@
 // 月球场景使用的玻璃材质，与对应背景捕获组件的参数约定配套。
-Shader "MoonExhibit/LiquidGlass"
+Shader "CZCIT/GlassUI/Scene Glass"
 {
     Properties
     {
@@ -33,9 +33,9 @@ Shader "MoonExhibit/LiquidGlass"
             #pragma target 3.5
             #pragma multi_compile_instancing
             #include "UnityCG.cginc"
-            UNITY_DECLARE_SCREENSPACE_TEXTURE(_MoonGlassScene);
-            float4 _MoonGlassScene_TexelSize;
-            float _Aspect, _Radius, _Blur, _Frost, _MoonGlassSceneReady;
+            UNITY_DECLARE_SCREENSPACE_TEXTURE(_CZCITGlassScene);
+            float4 _CZCITGlassScene_TexelSize;
+            float _Aspect, _Radius, _Blur, _Frost, _CZCITGlassSceneReady;
             float _InteractionHighlight;
             float _Selected, _Pressed, _Reveal, _ConfirmPulse;
             float _MenuLighting, _RimStrength, _BackgroundLimit;
@@ -70,7 +70,7 @@ Shader "MoonExhibit/LiquidGlass"
             float3 sampleBackground(float2 uv)
             {
                 uv = UnityStereoTransformScreenSpaceTex(uv);
-                float3 sampleColor = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MoonGlassScene, uv).rgb;
+                float3 sampleColor = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_CZCITGlassScene, uv).rgb;
                 return sampleColor;
             }
             float4 frag(V i) : SV_Target
@@ -95,12 +95,12 @@ Shader "MoonExhibit/LiquidGlass"
                     {
                         float weight = exp(-.3 * (x * x + y * y));
                         color +=
-                            sampleBackground(saturate(uv + float2(x, y) * _MoonGlassScene_TexelSize.xy * _Blur * .3)) *
+                            sampleBackground(saturate(uv + float2(x, y) * _CZCITGlassScene_TexelSize.xy * _Blur * .3)) *
                             weight;
                         weights += weight;
                     }
                 color /= weights;
-                color = lerp(float3(.025, .035, .06), color, saturate(_MoonGlassSceneReady));
+                color = lerp(float3(.025, .035, .06), color, saturate(_CZCITGlassSceneReady));
                 float luminance = dot(color, float3(.2126, .7152, .0722));
                 float3 controlled = color / (1 + luminance / max(_BackgroundLimit, .01));
                 color = lerp(color, controlled, _MenuLighting);

@@ -1,5 +1,5 @@
 // 共享玻璃材质，结合背景采样、边缘和颜色参数构成面板外观。
-Shader "BlackHoleDemo/LiquidGlass"
+Shader "CZCIT/GlassUI/Stereo Glass"
 {
     Properties
     {

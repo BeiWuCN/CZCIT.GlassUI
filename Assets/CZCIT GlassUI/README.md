@@ -58,7 +58,7 @@ CZCIT.GlassUI.CurvedGlassLayout.Apply(canvas, 1600, "Panel");
 | 导入报找不到 `UnityEngine.XR.Interaction.Toolkit` | 桌面版确认未导入 `Runtime/XR`。XR 版确认先安装 XRI 2.6.4，再等 Package Manager 和 Unity 编译完成。 |
 | 菜单项没出现 | 先解决 Console 里的编译错误，再到 **GameObject → UI** 查找。 |
 | 面板呈粉色 | 到 **Project Settings → Graphics** 检查渲染管线。随包 shader 面向 Built-in。URP/HDRP 项目需要适配材质和背景采集。 |
-| 面板有颜色，背后却没有动态变化 | 检查相机上的 `MoonGlassBackground`、面板材质以及物体是否位于玻璃后方。双眼捕获不可用时会显示材质回退。 |
+| 面板有颜色，背后却没有动态变化 | 检查相机上的 `GlassSceneBackground`、面板材质以及物体是否位于玻璃后方。双眼捕获不可用时会显示材质回退。 |
 | 能看到按钮，但点不动 | 桌面检查 EventSystem 和 GraphicRaycaster。XR 检查 XRUIInputModule、手柄的 UI 射线、World Camera 和曲面射线组件。 |
 | 不同相机或面板的背景相互覆盖 | 背景纹理使用全局 shader 参数。先在一个场景只保留一套采集组件，确认效果后再规划多相机方案。 |
 

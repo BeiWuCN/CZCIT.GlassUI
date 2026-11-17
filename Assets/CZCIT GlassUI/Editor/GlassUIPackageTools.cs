@@ -68,8 +68,8 @@ namespace CZCIT.GlassUI.Editor
                 root.transform.SetPositionAndRotation(
                     Camera.main.transform.position + Camera.main.transform.forward * 1.5f,
                     Camera.main.transform.rotation);
-                if (!Camera.main.GetComponent<CZCIT.GlassUI.MoonGlassBackground>())
-                    Undo.AddComponent<CZCIT.GlassUI.MoonGlassBackground>(Camera.main.gameObject);
+                if (!Camera.main.GetComponent<CZCIT.GlassUI.GlassSceneBackground>())
+                    Undo.AddComponent<CZCIT.GlassUI.GlassSceneBackground>(Camera.main.gameObject);
             }
             var panel = new GameObject("Panel", typeof(RectTransform), typeof(Image));
             panel.transform.SetParent(root.transform, false);

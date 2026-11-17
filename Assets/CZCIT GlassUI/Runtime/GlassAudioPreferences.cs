@@ -18,7 +18,7 @@ namespace CZCIT.GlassUI
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Initialize()
         {
-            Master = Mathf.Clamp01(PlayerPrefs.GetFloat("Moon.Settings.Volume", 1));
+            Master = Mathf.Clamp01(PlayerPrefs.GetFloat("CZCIT.GlassUI.MasterVolume", 1));
             Music = Mathf.Clamp01(PlayerPrefs.GetFloat("Audio.MusicVolume", 1));
             Interface = Mathf.Clamp01(PlayerPrefs.GetFloat("Audio.InterfaceVolume", 1));
             Video = Mathf.Clamp01(PlayerPrefs.GetFloat("Audio.VideoVolume", 1));
@@ -29,7 +29,7 @@ namespace CZCIT.GlassUI
         public static void SetMaster(float value)
         {
             Master = Mathf.Clamp01(value);
-            PlayerPrefs.SetFloat("Moon.Settings.Volume", Master);
+            PlayerPrefs.SetFloat("CZCIT.GlassUI.MasterVolume", Master);
             ApplyMaster();
             Changed?.Invoke();
         }
