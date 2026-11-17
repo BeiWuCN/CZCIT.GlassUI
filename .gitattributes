@@ -1,5 +1,6 @@
 * text=auto
-*.shader linguist-detectable=false
+*.shader linguist-language=HLSL
+*.shader linguist-detectable=true
 *.svg linguist-detectable=false
 *.asmdef linguist-detectable=false
 *.meta linguist-detectable=false
